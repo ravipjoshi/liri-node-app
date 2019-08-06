@@ -2,10 +2,19 @@ require("dotenv").config();
 var axios = require("axios");
 var keys = require("./keys.js");
 var moment = require("moment");
+moment().format();
+var spotify = require("node-spotify-api");
 
-var spotifykey = keys.spotify;
+
+
 var omdbkey = keys.omdb;
 var bandsintownkey = keys.bandsintown;
+var fs = require("f")
+
+var spotify = new Spotify({
+  id: keys.spotify.id,
+  secret: keys.spotify.secret
+});
 
 
 
@@ -45,40 +54,41 @@ function concert(artist)
       
 
 }
-function spotify(query)
+function spotify(song)
 {
-    axios.get(`http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy`).then(
-  function(response) {
-    console.log("The movie's rating is: " + response.data.imdbRating);
+  spotify
+  .search({ type: 'track', query: song })
+  .then(function(response) {
+    console.log(response);
   })
-  .catch(function(error) {
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.log("---------------Data---------------");
-      console.log(error.response.data);
-      console.log("---------------Status---------------");
-      console.log(error.response.status);
-      console.log("---------------Status---------------");
-      console.log(error.response.headers);
-    } else if (error.request) {
-      // The request was made but no response was received
-      // `error.request` is an object that comes back with details pertaining to the error that occurred.
-      console.log(error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.log("Error", error.message);
-    }
-    console.log(error.config);
-  });
-
+  .catch(function(err) {
+    console.log(err);
+  }); 
+  
 
 }
 function omdb(movie)
 {
-    axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey}`).then(
+    axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
   function(response) {
-    console.log("The movie's rating is: " + response.data.imdbRating);
+    
+
+   // Title of the movie.
+   console.log("The movie's rating is: " + response.data.Title);
+   // Year the movie came out.
+   console.log("The movie's rating is: " + response.data.Year);
+   // IMDB Rating of the movie.
+   console.log("The movie's rating is: " + response.data.imdbRating);
+   // Rotten Tomatoes Rating of the movie.
+   console.log("The movie's rating is: " + response.data.Ratings[1].Value);
+   // Country where the movie was produced.
+   console.log("The movie's rating is: " + response.data.imdbRating);
+   // Language of the movie.
+   console.log("The movie's rating is: " + response.data.imdbRating);
+   // Plot of the movie.
+   console.log("The movie's rating is: " + response.data.imdbRating);
+   // Actors in the movie
+   console.log("The movie's rating is: " + response.data.imdbRating);
   })
   .catch(function(error) {
     if (error.response) {
