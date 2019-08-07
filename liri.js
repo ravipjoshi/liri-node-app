@@ -17,12 +17,17 @@ var spotify = new Spotify({
   secret: keys.spotify.secret
 });
 
-
+var command =process.argv[2];
+var userinput  = process.argv.slice(2).join(" ");
 
 
 
 function concert(artist)
 {
+   if(artist==undefined || artist == null)
+   {
+      artist = "Jonas Brother"
+   }
     axios.get(`https://rest.bandsintown.com/artists/${artist}/events?app_id=${bandsintownkey.id}`).then(
         function(response) {
 
@@ -78,7 +83,10 @@ function concert(artist)
 function spotifysong(song)
 {
  
-  
+  if (song==undefined || song==null)
+  {
+     song = "The Sign";
+  } 
 
 
     spotify
@@ -110,6 +118,52 @@ function spotifysong(song)
 }
 function omdb(movie)
 {
+  if(movie==undefined || movie==null)
+  {
+    movie = "Mr. Nobody";
+    axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
+      function(response) {
+        
+       console.log("================== Movie Info ====================");
+       fs.appendFileSync("log.txt","================== Movie Info ====================");
+       console.log("-----------------------");
+        fs.appendFileSync("log.txt", "-----------------------\n");
+        console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+        fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" +"\n");
+        console.log("It's on Netflix!");
+        fs.appendFileSync("log.txt", "It's on Netflix!\n");
+             
+       // Title of the movie.
+       console.log("The movie's rating is: " + response.data.Title);
+       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.Title);
+       // Year the movie came out.
+       console.log("The movie's rating is: " + response.data.Year);
+       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.Year);
+       // IMDB Rating of the movie.
+       console.log("The movie's rating is: " + response.data.imdbRating);
+       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.imdbRating); 
+      }.catch(function(error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log("---------------Data---------------");
+          console.log(error.response.data);
+          console.log("---------------Status---------------");
+          console.log(error.response.status);
+          console.log("---------------Status---------------");
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an object that comes back with details pertaining to the error that occurred.
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log("Error", error.message);
+        }
+        console.log(error.config);
+      });
+
+  }
     axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
   function(response) {
     
@@ -188,17 +242,17 @@ function omdb(movie)
 // Actual Code to run the program
 
 
-switch (process.argv[2])
+switch (command)
  {
     case "concert-this":
         
-            concert(process.argv[3]);
+            concert(userinput);
       break;
     case "spotify-this-song":
-      spotifysong(process.argv[3]);
+      spotifysong(userinput);
       break;
     case "movie-this":
-           omdb(process.argv[3]); 
+           omdb(userinput); 
       break;
     case "do-what-it-says":
       doWhatever();
