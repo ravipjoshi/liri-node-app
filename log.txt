@@ -1,53 +1,39 @@
-================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Sunrise, FL
-Event's Venue Location: Sunrise, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Sunrise, FL
-Event's Venue Location: Sunrise, United States 
-Event's Date:Tue Aug 06 2019 00:00:00 GMT-0400 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Sunrise, FL
-Event's Venue Location: Sunrise, United States 
-Event's Date:Tue Aug 06 2019 00:00:00 GMT-0400 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:Invalid date 
- ================== Song ====================
+================== Movie Info ====================-----------------------
+If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/
+It's on Netflix!
+================== Movie Info ====================The movie's rating is: Mr. NobodyThe movie's rating is: 2009The movie's rating is: 7.8The movie's rating is: 67%The movie's country is: Belgium, Germany, Canada, France, USA, UKThe movie's language is: English, MohawkThe movie's plot is: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.The movie's Actors are: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham================== Movie Info ====================================== Movie Info ====================The movie's rating is: Kiss Kiss Bang BangThe movie's rating is: 2005The movie's rating is: 7.6The movie's rating is: 85%The movie's country is: USAThe movie's language is: EnglishThe movie's plot is: A murder mystery brings together a private eye, a struggling actress, and a thief masquerading as an actor.The movie's Actors are: Robert Downey Jr., Val Kilmer, Michelle Monaghan, Corbin Bernsen================== Movie Info ====================================== Event Info ====================
 Event's Venue Name: End Of The Road World Tour - Charleston, SC
 Event's Venue Location: Charleston, United States 
 Event's Date:08-08-2019 
- ================== Song ====================
+ ================== Event Info ====================================== Event Info ====================
+================== Movie Info ====================-----------------------
+If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/
+It's on Netflix!
+================== Movie Info ====================The movie's rating is: Mr. NobodyThe movie's rating is: 2009The movie's rating is: 7.8The movie's rating is: 67%The movie's country is: Belgium, Germany, Canada, France, USA, UKThe movie's language is: English, MohawkThe movie's plot is: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.The movie's Actors are: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham================== Movie Info ====================================== Event Info ====================
+Event's Venue Name: The Glad Cafe C.I.C
+Event's Venue Location: Glasgow, United Kingdom 
+================== Movie Info ====================The movie's rating is: The Matrix ReloadedThe movie's rating is: 2003The movie's rating is: 7.2The movie's rating is: 73%The movie's country is: USAThe movie's language is: English, FrenchThe movie's plot is: Following the events of The Matrix (1999), Neo and the rebel leaders estimate they have 72 hours until 250,000 probes discover Zion and destroy it and its inhabitants. Neo must decide how he can save Trinity from a dark fate in his dreams.The movie's Actors are: Ray Anthony, Christine Anu, Andy Arness, Alima Ashton-Sheibu================== Movie Info ====================================== Event Info ====================
+Event's Venue Name: The Glad Cafe C.I.C
+Event's Venue Location: Glasgow, United Kingdom 
+Event's Date:10-04-2019 
+ ================== Event Info ====================Album Name: Spider-Man: Into the Spider-Verse (Soundtrack From & Inspired by the Motion Picture)Album Name: Harry StylesAlbum Name: The Sign (US Album) [Remastered]Album Name: Or Nah (feat. The Weeknd, Wiz Khalifa and DJ Mustard) [Remix Version]Album Name: Revenge Of The Dreamers III================== Event Info ====================
+Event's Venue Name: The Glad Cafe C.I.C
+Event's Venue Location: Glasgow, United Kingdom 
+Event's Date:10-04-2019 
+ ================== Event Info ====================================== Movie Info ====================
+-----------------------
+If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/
+It's on Netflix!
+================== Movie Info ====================The movie's rating is: Mr. NobodyThe movie's rating is: 2009The movie's rating is: 7.8The movie's rating is: 67%The movie's country is: Belgium, Germany, Canada, France, USA, UKThe movie's language is: English, MohawkThe movie's plot is: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.The movie's Actors are: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham================== Movie Info ====================================== Event Info ====================
 Event's Venue Name: End Of The Road World Tour - Charleston, SC
 Event's Venue Location: Charleston, United States 
 Event's Date:08-08-2019 
- ================== Event Info ====================
-Event's Venue Name: End Of The Road World Tour - Charleston, SC
-Event's Venue Location: Charleston, United States 
-Event's Date:08-08-2019 
- ================== Event Info ====================
+ ================== Event Info ====================================== Event Info ====================
+Event's Venue Name: Amway Center
+Event's Venue Location: Orlando, United States 
+Event's Date:08-09-2019 
+ ================== Event Info ====================================== Movie Info ====================
+-----------------------
+If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/
+It's on Netflix!
+================== Movie Info ====================The movie's rating is: Mr. NobodyThe movie's rating is: 2009The movie's rating is: 7.8The movie's rating is: 67%The movie's country is: Belgium, Germany, Canada, France, USA, UKThe movie's language is: English, MohawkThe movie's plot is: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.The movie's Actors are: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham================== Movie Info ====================

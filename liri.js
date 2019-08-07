@@ -17,20 +17,31 @@ var spotify = new Spotify({
   secret: keys.spotify.secret
 });
 
-var command =process.argv[2];
-var userinput  = process.argv.slice(2).join(" ");
+var command = process.argv[2];
 
+if (process.argv[3] === undefined)
+{
+  userinput="";
+   
+}
+else{
+  userinput  = process.argv.slice(3).join(" ");
+}
+console.log("user input is:"+userinput);
 
 
 function concert(artist)
 {
-   if(artist==undefined || artist == null)
+   console.log ("artist is "+ artist);
+   if(artist===undefined|| artist==="")
    {
-      artist = "Jonas Brother"
+      artist = "Jonas"
+      console.log(artist);
    }
     axios.get(`https://rest.bandsintown.com/artists/${artist}/events?app_id=${bandsintownkey.id}`).then(
         function(response) {
 
+         // console.log(response);
           var datetime = response.data[0].datetime;
           var dateArray = datetime.split('T');
           
@@ -83,7 +94,7 @@ function concert(artist)
 function spotifysong(song)
 {
  
-  if (song==undefined || song==null)
+  if (song === undefined || song==="")
   {
      song = "The Sign";
   } 
@@ -92,7 +103,7 @@ function spotifysong(song)
     spotify
   .search({ type: 'track', query: song })
   .then(function(response) {
-   // console.log(response);
+  // console.log(response);
     for (var i = 0; i < 5; i++) {
      console.log("================== Song Info ===================="); 
      fs.appendFileSync("================== Song Info ===================="); 
@@ -101,7 +112,7 @@ function spotifysong(song)
      console.log(`Song Name:  ${response.tracks.items[i].name}`);
      fs.appendFileSync(`Song Name:  ${response.tracks.items[i].name}`);
      console.log(`Album Name: ${response.tracks.items[i].album.name}`);
-     fs.appendFileSync(`Album Name: ${response.tracks.items[i].album.name}`);
+     fs.appendFileSync("log.txt",`Album Name: ${response.tracks.items[i].album.name}`);
     //  console.log(`Preview Link: ${response.tracks.items[i].preview_url}`);
     //  fs.appendFileSync(`Preview Link: ${response.tracks.items[i].preview_url}`);         
       //console.log(spotifyResults);
@@ -118,50 +129,18 @@ function spotifysong(song)
 }
 function omdb(movie)
 {
-  if(movie==undefined || movie==null)
+  if(movie===undefined || movie==="")
   {
     movie = "Mr. Nobody";
-    axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
-      function(response) {
-        
        console.log("================== Movie Info ====================");
-       fs.appendFileSync("log.txt","================== Movie Info ====================");
+       fs.appendFileSync("log.txt","================== Movie Info ====================\n");
        console.log("-----------------------");
         fs.appendFileSync("log.txt", "-----------------------\n");
-        console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+        console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/\n");
         fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" +"\n");
-        console.log("It's on Netflix!");
+        console.log("It's on Netflix!\n");
         fs.appendFileSync("log.txt", "It's on Netflix!\n");
-             
-       // Title of the movie.
-       console.log("The movie's rating is: " + response.data.Title);
-       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.Title);
-       // Year the movie came out.
-       console.log("The movie's rating is: " + response.data.Year);
-       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.Year);
-       // IMDB Rating of the movie.
-       console.log("The movie's rating is: " + response.data.imdbRating);
-       fs.appendFileSync("log.txt","The movie's rating is: " + response.data.imdbRating); 
-      }.catch(function(error) {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          console.log("---------------Data---------------");
-          console.log(error.response.data);
-          console.log("---------------Status---------------");
-          console.log(error.response.status);
-          console.log("---------------Status---------------");
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an object that comes back with details pertaining to the error that occurred.
-          console.log(error.request);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log("Error", error.message);
-        }
-        console.log(error.config);
-      });
+      
 
   }
     axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
@@ -228,12 +207,7 @@ function omdb(movie)
       
      spotifysong(randomText[1]);
 
-      // if (randomText.length == 2) {
-      //     ask(randomText[0], randomText[1]);
-      // }
-      // else if (randomText.length == 1) {
-      //     ask(randomText[0]);
-      // }
+      
   });
 }
 
