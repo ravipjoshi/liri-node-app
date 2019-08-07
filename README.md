@@ -64,6 +64,10 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
+   * Working Demo
+
+     ![concert-this](assets/concert-this.gif)  
+
 2. `node liri.js spotify-this-song '<song name here>'`
 
    * This will show the following information about the song in your terminal/bash window
@@ -73,8 +77,12 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
      * The song's name
 
      * The album that the song is from
+   * Working Demo
+
+     ![concert-this](assets/spotify-this-song.gif)   
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
+
 
    
 3. `node liri.js movie-this '<movie name here>'`

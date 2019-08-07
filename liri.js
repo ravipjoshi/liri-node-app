@@ -77,7 +77,10 @@ function concert(artist)
 }
 function spotifysong(song)
 {
-  console.log(process.argv[3]);
+ 
+  
+
+
     spotify
   .search({ type: 'track', query: song })
   .then(function(response) {
