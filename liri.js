@@ -2,7 +2,7 @@ require("dotenv").config();
 var axios = require("axios");
 var keys = require("./keys.js");
 var moment = require("moment");
-moment().format('L');
+
 
 var Spotify = require("node-spotify-api");
 
@@ -27,22 +27,24 @@ function concert(artist)
         function(response) {
 
           var datetime = response.data[0].datetime;
-          var dateArr = datetime.split('');
-          var date = moment(dateArr);
-          console.log(date);
+          var dateArray = datetime.split('T');
+          
+          
           
           //console.log(response);
-          
-          fs.appendFileSync("log.txt", `================== Song ====================`);
+          console.log("================== Event Info ====================");
+          fs.appendFileSync("log.txt", `================== Event Info ====================\n`);
           //  Name of the venue
           console.log(`Event's Venue Name: ${response.data[0].venue.name} `);
-          fs.appendFileSync("log.txt",`Event's Venue Name: ${response.data[0].venue.name}`);
+          fs.appendFileSync("log.txt",`Event's Venue Name: ${response.data[0].venue.name}\n`);
           //  Venue location
-          console.log(`Event's Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.country} `  );
+          console.log(`Event's Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.country}\n `  );
           //  Date of the Event (use moment to format this as "MM/DD/YYYY")
-          fs.appendFileSync("log.txt",`Event's Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.country} `  );
-          console.log(`Event's Date:${ date}  `);
-          fs.appendFileSync("log.txt",`Event's Date:${ date}  `);
+          fs.appendFileSync("log.txt",`Event's Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.country} \n`  );
+          console.log(`Event's Date:${moment(dateArray[0]).format("MM-DD-YYYY")}`);
+          fs.appendFileSync("log.txt",`Event's Date:${moment(dateArray[0]).format("MM-DD-YYYY")} \n `);
+          console.log("================== Event Info ====================");
+          fs.appendFileSync("log.txt","================== Event Info ====================");
         })
         .catch(function(error) {
           if (error.response) {
@@ -73,12 +75,13 @@ function concert(artist)
       
 
 }
-function spotify(song)
+function spotifysong(song)
 {
-  spotify
+  console.log(process.argv[3]);
+    spotify
   .search({ type: 'track', query: song })
   .then(function(response) {
-    console.log(response);
+   // console.log(response);
     for (var i = 0; i < 5; i++) {
      console.log("================== Song Info ===================="); 
      fs.appendFileSync("================== Song Info ===================="); 
@@ -88,8 +91,8 @@ function spotify(song)
      fs.appendFileSync(`Song Name:  ${response.tracks.items[i].name}`);
      console.log(`Album Name: ${response.tracks.items[i].album.name}`);
      fs.appendFileSync(`Album Name: ${response.tracks.items[i].album.name}`);
-     console.log(`Preview Link: ${response.tracks.items[i].preview_url}`);
-     fs.appendFileSync(`Preview Link: ${response.tracks.items[i].preview_url}`);         
+    //  console.log(`Preview Link: ${response.tracks.items[i].preview_url}`);
+    //  fs.appendFileSync(`Preview Link: ${response.tracks.items[i].preview_url}`);         
       //console.log(spotifyResults);
       console.log("================== Song Info====================");
       fs.appendFileSync("================== Song Info ===================="); 
@@ -163,14 +166,17 @@ function omdb(movie)
  var doWhatever = function() {
   fs.readFile("random.txt", "utf8", function (err, data) {
       if (err) throw err;
-          var randomText = data.split(",");
+     
+      var randomText = data.split(",");
       
-      if (randomText.length == 2) {
-          ask(randomText[0], randomText[1]);
-      }
-      else if (randomText.length == 1) {
-          ask(randomText[0]);
-      }
+     spotifysong(randomText[1]);
+
+      // if (randomText.length == 2) {
+      //     ask(randomText[0], randomText[1]);
+      // }
+      // else if (randomText.length == 1) {
+      //     ask(randomText[0]);
+      // }
   });
 }
 
@@ -185,8 +191,8 @@ switch (process.argv[2])
         
             concert(process.argv[3]);
       break;
-    case "spotif-this-song":
-            spotify(process.argv[3]);
+    case "spotify-this-song":
+      spotifysong(process.argv[3]);
       break;
     case "movie-this":
            omdb(process.argv[3]); 

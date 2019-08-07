@@ -1,92 +1,48 @@
 # LIRI Bot
 
-### Overview
+### Introduction
 
-In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a command line node app that takes in parameters and gives you back data.
+
+LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
+
+
 
 ### Before You Begin
 
-1. LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+# Perform following steps:
 
-2. Make a new GitHub repository called liri-node-app and clone it to your computer.
+1.  Clone the repository
 
-3. To retrieve the data that will power this app, you'll need to send requests using the `axios` package to the Bands in Town, Spotify and OMDB APIs. You'll find these Node packages crucial for your assignment.
+2.  Run npm install, and the following packages should be installed:
 
-   * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
+      Node-Spotify-API
 
-   * [Axios](https://www.npmjs.com/package/axios)
+      Axios : This module will be used to get the IMDB and BandsInTown API data
 
-     * You'll use Axios to grab data from the [OMDB API](http://www.omdbapi.com) and the [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+      Moment
 
-   * [Moment](https://www.npmjs.com/package/moment)
+      DotEnv
 
-   * [DotEnv](https://www.npmjs.com/package/dotenv)
-   ### Instructions
+3.  Create a .env file in the same directory as the rest of the files. In the .env file should be:
 
-1. Navigate to the root of your project and run `npm init -y` &mdash; this will initialize a `package.json` file for your project. The `package.json` file is required for installing third party npm packages and saving their version numbers. If you fail to initialize a `package.json` file, it will be troublesome, and at times almost impossible for anyone else to run your code after cloning your project.
+      '# Spotify API keys'
 
-2. Make a `.gitignore` file and add the following lines to it. This will tell git not to track these files, and thus they won't be committed to Github.
+      'SPOTIFY_ID=your-spotify-ID-here'
 
-```
-node_modules
-.DS_Store
-.env
-```
+      'SPOTIFY_SECRET=your-spotify-secret-here'
 
-3. Make a JavaScript file named `keys.js`.
+      # Bands API keys
 
-* Inside keys.js your file will look like this:
+      'BANDSINTOWN_ID=your-bandsintown-id-here'
 
-```js
-console.log('this is loaded');
+      '# OMDB API keys'
 
-exports.spotify = {
-  id: process.env.SPOTIFY_ID,
-  secret: process.env.SPOTIFY_SECRET
-};
-```
+      'OMDB_ID=your-OMDB-ID-here'
 
-4. Next, create a file named `.env`, add the following to it, replacing the values with your API keys (no quotes) once you have them:
 
-```js
-# Spotify API keys
+### liri Available functions:
 
-SPOTIFY_ID=your-spotify-id
-SPOTIFY_SECRET=your-spotify-secret
-
-```
-
-* This file will be used by the `dotenv` package to set what are known as environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github &mdash; keeping our API key information private.
-
-* If someone wanted to clone your app from github and run it themselves, they would need to supply their own `.env` file for it to work.
-
-5. Make a file called `random.txt`.
-
-   * Inside of `random.txt` put the following in with no extra characters or white space:
-
-     * spotify-this-song,"I Want it That Way"
-
-6. Make a JavaScript file named `liri.js`.
-
-7. At the top of the `liri.js` file, add code to read and set any environment variables with the dotenv package:
-
-```js
-require("dotenv").config();
-```
-
-8. Add the code required to import the `keys.js` file and store it in a variable.
-
-```js
-  var keys = require("./keys.js");
-```
-  
-* You should then be able to access your keys information like so
-
-  ```js
-  var spotify = new Spotify(keys.spotify);
-  ```
-
-9. Make it so liri.js can take in one of the following commands:
+# liri.js can take in one of the following commands:
 
    * `concert-this`
 
@@ -96,11 +52,11 @@ require("dotenv").config();
 
    * `do-what-it-says`
 
-### What Each Command Should Do
+### Each Command Behaviour
 
 1. `node liri.js concert-this <artist/band name here>`
 
-   * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
+   * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=yourID"`) for an artist and render the following information about each event to the terminal:
 
      * Name of the venue
 
@@ -116,24 +72,11 @@ require("dotenv").config();
 
      * The song's name
 
-     * A preview link of the song from Spotify
-
      * The album that the song is from
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
 
-   * You will utilize the [node-spotify-api](https://www.npmjs.com/package/node-spotify-api) package in order to retrieve song information from the Spotify API.
-
-   * The Spotify API requires you sign up as a developer to generate the necessary credentials. You can follow these steps in order to generate a **client id** and **client secret**:
-
-   * Step One: Visit <https://developer.spotify.com/my-applications/#!/>
-
-   * Step Two: Either login to your existing Spotify account or create a new one (a free account is fine) and log in.
-
-   * Step Three: Once logged in, navigate to <https://developer.spotify.com/my-applications/#!/applications/create> to register a new application to be used with the Spotify API. You can fill in whatever you'd like for these fields. When finished, click the "complete" button.
-
-   * Step Four: On the next screen, scroll down to where you see your client id and client secret. Copy these values down somewhere, you'll need them to use the Spotify API and the [node-spotify-api package](https://www.npmjs.com/package/node-spotify-api).
-
+   
 3. `node liri.js movie-this '<movie name here>'`
 
    * This will output the following information to your terminal/bash window:
@@ -165,15 +108,7 @@ require("dotenv").config();
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-### BONUS
 
-* In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
-* Make sure you append each command you run to the `log.txt` file. 
 
-* Do not overwrite your file each time you run a command.
-
-### Reminder: Submission on BCS
-
-* Please submit the link to the Github Repository!
 
