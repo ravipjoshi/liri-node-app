@@ -79,10 +79,12 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
      * The album that the song is from
    * Working Demo
 
-     ![concert-this](assets/spotify-this-song.gif)   
+     ![spotify-this-song](assets/spotify-this-song.gif)   
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
-
+  
+   * Working Demo  
+     ![spotify-this-song-default](asset/spotify-this-song-default.gif)
 
    
 3. `node liri.js movie-this '<movie name here>'`
@@ -99,6 +101,8 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
        * Plot of the movie.
        * Actors in the movie.
      ```
+   * Working Demo  
+     ![movie-this](asset/movie-this.gif)
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
@@ -106,8 +110,10 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
      * It's on Netflix!
 
-   * You'll use the `axios` package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
-
+   * Working Demo  
+     ![movie-this-default](asset/movie-this-default.gif)
+   
+   
 4. `node liri.js do-what-it-says`
 
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
