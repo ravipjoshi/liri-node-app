@@ -60,7 +60,7 @@ function concert(artist)
           console.log(`Event's Date:${moment(dateArray[0]).format("MM-DD-YYYY")}`);
           fs.appendFileSync("log.txt",`Event's Date:${moment(dateArray[0]).format("MM-DD-YYYY")} \n `);
           console.log("================== Event Info ====================");
-          fs.appendFileSync("log.txt","================== Event Info ====================");
+          fs.appendFileSync("log.txt","================== Event Info ====================\n");
         })
         .catch(function(error) {
           if (error.response) {
@@ -106,7 +106,7 @@ function spotifysong(song)
   // console.log(response);
     for (var i = 0; i < 5; i++) {
      console.log("================== Song Info ===================="); 
-     fs.appendFileSync("================== Song Info ===================="); 
+     fs.appendFileSync("================== Song Info ====================\n"); 
      console.log(`Artist(s):   ${response.tracks.items[i].artists[0].name}`); 
      fs.appendFileSync(`Artist(s):   ${response.tracks.items[i].artists[0].name}`);
      console.log(`Song Name:  ${response.tracks.items[i].name}`);
@@ -117,7 +117,7 @@ function spotifysong(song)
     //  fs.appendFileSync(`Preview Link: ${response.tracks.items[i].preview_url}`);         
       //console.log(spotifyResults);
       console.log("================== Song Info====================");
-      fs.appendFileSync("================== Song Info ===================="); 
+      fs.appendFileSync("================== Song Info ====================\n"); 
     }
   })
   .catch(function(err) {
@@ -140,14 +140,14 @@ function omdb(movie)
         fs.appendFileSync("log.txt", "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/" +"\n");
         console.log("It's on Netflix!\n");
         fs.appendFileSync("log.txt", "It's on Netflix!\n");
-      
+        fs.appendFileSync("log.txt","================== Movie Info ====================\n");
 
   }
     axios.get(`http://www.omdbapi.com/?t=${movie}&y=&plot=short&apikey=${omdbkey.id}`).then(
   function(response) {
     
    console.log("================== Movie Info ====================");
-   fs.appendFileSync("log.txt","================== Movie Info ====================");
+   fs.appendFileSync("log.txt","================== Movie Info ====================\n");
    // Title of the movie.
    console.log("The movie's rating is: " + response.data.Title);
    fs.appendFileSync("log.txt","The movie's rating is: " + response.data.Title);
@@ -173,7 +173,7 @@ function omdb(movie)
    console.log("The movie's Actors are: " + response.data.Actors);
    fs.appendFileSync("log.txt","The movie's Actors are: " + response.data.Actors);
    console.log("================== Movie Info ====================");
-   fs.appendFileSync("log.txt","================== Movie Info ====================");
+   fs.appendFileSync("log.txt","================== Movie Info ====================\n");
    })
   .catch(function(error) {
     if (error.response) {
@@ -204,9 +204,9 @@ function omdb(movie)
       if (err) throw err;
      
       var randomText = data.split(",");
-      
+    fs.appendFileSync("log.txt","================== Do What It Says Info ====================\n");
      spotifysong(randomText[1]);
-
+     fs.appendFileSync("log.txt","================== Do What It Says Info ====================\n");  
       
   });
 }

@@ -66,6 +66,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
    * Working Demo
 
+
      ![concert-this](assets/concert-this.gif)  
 
 2. `node liri.js spotify-this-song '<song name here>'`
@@ -77,14 +78,18 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
      * The song's name
 
      * The album that the song is from
+   
    * Working Demo
+
 
      ![spotify-this-song](assets/spotify-this-song.gif)   
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
   
-   * Working Demo  
-     ![spotify-this-song-default](asset/spotify-this-song-default.gif)
+   * Working Demo
+
+
+     ![spotify-this-song-default](assets/spotify-this-song-default.gif)
 
    
 3. `node liri.js movie-this '<movie name here>'`
@@ -102,7 +107,9 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
        * Actors in the movie.
      ```
    * Working Demo  
-     ![movie-this](asset/movie-this.gif)
+
+
+     ![movie-this](assets/movie-this.gif)
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
@@ -111,7 +118,9 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
      * It's on Netflix!
 
    * Working Demo  
-     ![movie-this-default](asset/movie-this-default.gif)
+
+
+     ![movie-this-default](assets/movie-this-default.gif)
    
    
 4. `node liri.js do-what-it-says`
@@ -122,7 +131,11 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
+   * Working Demo  
 
+
+     ![do-what-it-says](assets/do-what-it-says.gif)
+   
 
 
 
